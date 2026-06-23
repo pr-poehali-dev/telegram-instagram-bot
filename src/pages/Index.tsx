@@ -442,8 +442,10 @@ export default function Index() {
               <p className="text-sm text-muted-foreground mb-6 flex-1">{g.desc}</p>
               <div className="flex items-center justify-between">
                 <span className="font-display text-2xl text-gold">{g.price}</span>
-                <Button size="sm" className="bg-primary text-primary-foreground hover:opacity-90 rounded-full">
-                  <Icon name="Lock" size={14} className="mr-1.5" />Купить
+                <Button size="sm" className="bg-primary text-primary-foreground hover:opacity-90 rounded-full" asChild>
+                  <a href={BOT_URL} target="_blank" rel="noopener noreferrer">
+                    <Icon name="ShoppingCart" size={14} className="mr-1.5" />Купить
+                  </a>
                 </Button>
               </div>
             </div>
