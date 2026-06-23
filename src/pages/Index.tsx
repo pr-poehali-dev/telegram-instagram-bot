@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
@@ -514,7 +515,10 @@ export default function Index() {
             <Icon name="Sparkles" className="text-gold" size={18} />
             <span className="font-display text-lg">Нумера</span>
           </div>
-          <p>© 2026 · Нумерология и цифровая психология</p>
+          <div className="flex gap-4">
+            <p>© 2026 · Нумерология и цифровая психология</p>
+            <Link to="/oferta" className="hover:text-gold transition-colors underline underline-offset-2">Публичная оферта</Link>
+          </div>
           <div className="flex gap-4">
             <Icon name="Send" size={18} className="hover:text-gold transition-colors cursor-pointer" />
             <Icon name="Instagram" size={18} className="hover:text-gold transition-colors cursor-pointer" />
