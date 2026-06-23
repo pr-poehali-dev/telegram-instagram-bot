@@ -4,35 +4,38 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 250 40% 6%;
+    --foreground: 40 30% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 250 35% 9%;
+    --card-foreground: 40 30% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 250 35% 9%;
+    --popover-foreground: 40 30% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 42 70% 60%;
+    --primary-foreground: 250 40% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 265 40% 18%;
+    --secondary-foreground: 40 30% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 250 25% 16%;
+    --muted-foreground: 250 12% 62%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 265 50% 55%;
+    --accent-foreground: 40 30% 96%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 40 30% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 265 30% 20%;
+    --input: 265 30% 20%;
+    --ring: 42 70% 60%;
 
-    --radius: 0.5rem;
+    --gold: 42 75% 62%;
+    --gold-soft: 42 55% 50%;
+    --violet: 265 55% 60%;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -97,5 +100,116 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Cormorant", serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-cosmos {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 50% -10%,
+        hsla(265, 55%, 35%, 0.5),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 90% 20%,
+        hsla(42, 60%, 40%, 0.18),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 60% at 10% 80%,
+        hsla(265, 60%, 30%, 0.35),
+        transparent 60%
+      ),
+      hsl(250 40% 6%);
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 80% 70%), hsl(42 60% 50%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass {
+    background: hsla(250, 35%, 12%, 0.55);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(42, 50%, 60%, 0.15);
+  }
+  .gold-border {
+    border: 1px solid hsla(42, 60%, 60%, 0.3);
+  }
+  .star-field::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, white, transparent),
+      radial-gradient(1px 1px at 60% 70%, white, transparent),
+      radial-gradient(1px 1px at 80% 10%, white, transparent),
+      radial-gradient(1px 1px at 40% 90%, white, transparent),
+      radial-gradient(1px 1px at 90% 50%, white, transparent),
+      radial-gradient(1px 1px at 33% 55%, white, transparent);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(6deg);
+  }
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+.animate-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
