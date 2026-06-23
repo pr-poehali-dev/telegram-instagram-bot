@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
+const BOT_URL = 'https://t.me/Numerolog_helper_bot';
+
 const guides = [
   {
     num: '1',
@@ -76,9 +78,11 @@ export default function Index() {
             <a href="#guides" className="hover:text-gold transition-colors">Гайды</a>
             <a href="#cabinet" className="hover:text-gold transition-colors">Кабинет</a>
           </div>
-          <Button className="bg-primary text-primary-foreground hover:opacity-90 rounded-full font-medium">
-            <Icon name="Send" size={16} className="mr-1.5" />
-            В Telegram
+          <Button className="bg-primary text-primary-foreground hover:opacity-90 rounded-full font-medium" asChild>
+            <a href={BOT_URL} target="_blank" rel="noopener noreferrer">
+              <Icon name="Send" size={16} className="mr-1.5" />
+              В Telegram
+            </a>
           </Button>
         </nav>
       </header>
@@ -101,7 +105,7 @@ export default function Index() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:opacity-90 rounded-full text-base px-8 h-12" asChild>
-              <a href="#calc"><Icon name="Calculator" size={18} className="mr-2" />Рассчитать бесплатно</a>
+              <a href={BOT_URL} target="_blank" rel="noopener noreferrer"><Icon name="Calculator" size={18} className="mr-2" />Рассчитать бесплатно</a>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full text-base px-8 h-12 gold-border bg-transparent hover:bg-secondary" asChild>
               <a href="#guides">Смотреть гайды</a>
@@ -258,10 +262,10 @@ export default function Index() {
               <div className="bg-secondary/70 rounded-2xl rounded-tl-sm p-3 max-w-[90%] text-sm animate-fade-up" style={{ animationDelay: '0.45s' }}>
                 Хотите полный «Персональный разбор» на 15 страниц: совместимость, кармические задачи, финансовые коды?
                 <div className="mt-3 flex flex-col gap-2">
-                  <button className="bg-primary text-primary-foreground rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity">
+                    <a href={BOT_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-primary text-primary-foreground rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity">
                     Да, хочу разбор · 499 ₽
-                  </button>
-                  <button className="gold-border rounded-full py-2 text-xs hover:bg-secondary transition-colors">
+                  </a>
+                  <button className="gold-border rounded-full py-2 text-xs hover:bg-secondary transition-colors w-full">
                     Пока не интересно
                   </button>
                 </div>
@@ -407,8 +411,10 @@ export default function Index() {
         <p className="text-muted-foreground max-w-lg mx-auto mb-9">
           Подключите Telegram-бота, получите первый расчёт бесплатно и откройте мир цифровой психологии.
         </p>
-        <Button size="lg" className="bg-primary text-primary-foreground hover:opacity-90 rounded-full text-base px-10 h-14">
-          <Icon name="Send" size={18} className="mr-2" />Открыть бота в Telegram
+        <Button size="lg" className="bg-primary text-primary-foreground hover:opacity-90 rounded-full text-base px-10 h-14" asChild>
+          <a href={BOT_URL} target="_blank" rel="noopener noreferrer">
+            <Icon name="Send" size={18} className="mr-2" />Открыть бота в Telegram
+          </a>
         </Button>
       </section>
 
