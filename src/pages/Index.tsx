@@ -72,6 +72,7 @@ export default function Index() {
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#calc" className="hover:text-gold transition-colors">Калькулятор</a>
+            <a href="#how" className="hover:text-gold transition-colors">Как это работает</a>
             <a href="#guides" className="hover:text-gold transition-colors">Гайды</a>
             <a href="#cabinet" className="hover:text-gold transition-colors">Кабинет</a>
           </div>
@@ -161,6 +162,159 @@ export default function Index() {
                   <p className="font-display text-2xl italic">Числа ждут вас</p>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="how" className="max-w-6xl mx-auto px-6 py-20">
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <span className="text-xs uppercase tracking-[0.25em] text-gold/80">Воронка продаж</span>
+          <h2 className="font-display text-4xl md:text-5xl font-semibold mt-3 mb-4">Как это работает</h2>
+          <p className="text-muted-foreground">
+            Автоматическая система: Instagram приводит людей, бот прогревает и продаёт — без вашего участия.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {[
+            { icon: 'Instagram', step: '01', title: 'Reels в Instagram', desc: 'Вирусные ролики о нумерологии привлекают вашу аудиторию.' },
+            { icon: 'Link', step: '02', title: 'Ссылка в профиле', desc: 'Призыв получить бесплатный расчёт ведёт в Telegram-бота.' },
+            { icon: 'Bot', step: '03', title: 'Бесплатная польза', desc: 'Бот выдаёт расчёт числа судьбы — знакомит и вовлекает.' },
+            { icon: 'CreditCard', step: '04', title: 'Автопродажа', desc: 'Бот предлагает полный разбор и сам выдаёт его после оплаты.' },
+          ].map((s, i) => (
+            <div
+              key={s.step}
+              className="glass rounded-2xl p-7 relative animate-fade-up hover:-translate-y-1 transition-transform"
+              style={{ animationDelay: `${i * 0.12}s` }}
+            >
+              <span className="font-display text-5xl text-gold/20 absolute top-4 right-5">{s.step}</span>
+              <div className="w-12 h-12 rounded-full gold-border bg-card/60 flex items-center justify-center mb-5">
+                <Icon name={s.icon} size={22} className="text-gold" />
+              </div>
+              <h3 className="font-display text-xl font-semibold mb-2">{s.title}</h3>
+              <p className="text-sm text-muted-foreground">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* BOT DEMO */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="text-xs uppercase tracking-[0.25em] text-gold/80">Telegram-бот</span>
+            <h2 className="font-display text-4xl md:text-5xl font-semibold mt-3 mb-5">
+              Продаёт за вас, <span className="text-gradient-gold italic">пока вы спите</span>
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Бот сам ведёт диалог: даёт бесплатный расчёт, прогревает интерес и предлагает платный гайд.
+              Оплата проходит прямо в Telegram, материал выдаётся автоматически.
+            </p>
+            <div className="space-y-4">
+              {[
+                { icon: 'Gift', t: 'Лид-магнит', d: 'Бесплатное число судьбы для каждого новичка.' },
+                { icon: 'Wallet', t: 'Оплата внутри Telegram', d: 'ЮKassa, Robokassa — без перехода на сторонние сайты.' },
+                { icon: 'Zap', t: 'Мгновенная выдача', d: 'PDF-гайд приходит сразу после оплаты.' },
+                { icon: 'Megaphone', t: 'Рассылки', d: 'Анонсируйте новые продукты всей базе в один клик.' },
+              ].map((f) => (
+                <div key={f.t} className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full gold-border bg-card/60 flex items-center justify-center shrink-0">
+                    <Icon name={f.icon} size={18} className="text-gold" />
+                  </div>
+                  <div>
+                    <div className="font-medium">{f.t}</div>
+                    <div className="text-sm text-muted-foreground">{f.d}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Chat mockup */}
+          <div className="glass rounded-3xl p-6 relative overflow-hidden">
+            <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-violet/20 blur-3xl animate-glow" />
+            <div className="relative flex items-center gap-3 pb-4 border-b border-border/50 mb-5">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-violet flex items-center justify-center">
+                <Icon name="Sparkles" size={18} className="text-background" />
+              </div>
+              <div>
+                <div className="font-medium text-sm">Нумеролог-помощник</div>
+                <div className="text-xs text-gold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-glow" />в сети
+                </div>
+              </div>
+            </div>
+            <div className="space-y-3 relative">
+              <div className="bg-secondary/70 rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-sm animate-fade-up">
+                Здравствуйте! ✨ Готовы узнать, что говорят о вас цифры? Я бесплатно рассчитаю ваше Число Судьбы.
+              </div>
+              <div className="bg-primary text-primary-foreground rounded-2xl rounded-tr-sm p-3 max-w-[70%] ml-auto text-sm animate-fade-up" style={{ animationDelay: '0.15s' }}>
+                Да, рассчитать! 14.08.1991
+              </div>
+              <div className="bg-secondary/70 rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-sm animate-fade-up" style={{ animationDelay: '0.3s' }}>
+                Ваше Число Судьбы — <span className="text-gold font-semibold">8</span>! Число лидеров и финансового успеха. Но есть и обратная сторона…
+              </div>
+              <div className="bg-secondary/70 rounded-2xl rounded-tl-sm p-3 max-w-[90%] text-sm animate-fade-up" style={{ animationDelay: '0.45s' }}>
+                Хотите полный «Персональный разбор» на 15 страниц: совместимость, кармические задачи, финансовые коды?
+                <div className="mt-3 flex flex-col gap-2">
+                  <button className="bg-primary text-primary-foreground rounded-full py-2 text-xs font-medium hover:opacity-90 transition-opacity">
+                    Да, хочу разбор · 499 ₽
+                  </button>
+                  <button className="gold-border rounded-full py-2 text-xs hover:bg-secondary transition-colors">
+                    Пока не интересно
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REELS CONTENT MACHINE */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="glass rounded-3xl p-8 md:p-14 relative overflow-hidden">
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-gold/10 blur-3xl animate-glow" />
+          <div className="relative grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <span className="text-xs uppercase tracking-[0.25em] text-gold/80">Контент-машина</span>
+              <h2 className="font-display text-4xl md:text-5xl font-semibold mt-3 mb-5">
+                Reels, которые <span className="text-gradient-gold italic">сами продвигаются</span>
+              </h2>
+              <p className="text-muted-foreground mb-7">
+                Генерируйте идеи вирусных роликов, снимайте контент-спринтом и планируйте публикации
+                на недели вперёд. Алгоритмы приведут новых подписчиков в воронку.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {['AI-идеи Reels', 'Контент-план', 'Отложенный постинг', 'Готовые сценарии'].map((t) => (
+                  <span key={t} className="text-sm gold-border rounded-full px-4 py-2 text-foreground/90">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { hook: '«Эта цифра в дате говорит о богатстве»', cta: 'Рассчитай бесплатно в боте' },
+                { hook: '«3 числа, которые притягивают любовь»', cta: 'Проверь совместимость' },
+                { hook: '«Ваш год по дате рождения»', cta: 'Получи прогноз в Telegram' },
+              ].map((r, i) => (
+                <div
+                  key={r.hook}
+                  className="flex items-center gap-4 bg-card/50 rounded-2xl p-4 gold-border animate-fade-up hover:-translate-x-1 transition-transform"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  <div className="w-12 h-16 rounded-lg bg-gradient-to-br from-violet/40 to-gold/30 flex items-center justify-center shrink-0">
+                    <Icon name="Play" size={18} className="text-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-display text-lg leading-tight mb-1">{r.hook}</div>
+                    <div className="text-xs text-gold flex items-center gap-1">
+                      <Icon name="ArrowRight" size={12} />{r.cta}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
