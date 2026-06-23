@@ -518,6 +518,7 @@ export default function Index() {
           <div className="flex gap-4">
             <p>© 2026 · Нумерология и цифровая психология</p>
             <Link to="/oferta" className="hover:text-gold transition-colors underline underline-offset-2">Публичная оферта</Link>
+            <Link to="/rekvizity" className="hover:text-gold transition-colors underline underline-offset-2">Реквизиты</Link>
           </div>
           <div className="flex gap-4">
             <Icon name="Send" size={18} className="hover:text-gold transition-colors cursor-pointer" />
