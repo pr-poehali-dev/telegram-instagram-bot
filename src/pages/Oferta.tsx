@@ -29,8 +29,11 @@ export default function Oferta() {
           <section>
             <h2 className="font-display text-2xl text-gold mb-3">2. Продавец</h2>
             <div className="glass rounded-2xl p-5 text-sm space-y-1">
-              <p><span className="text-muted-foreground">Наименование:</span> Нумера</p>
-              <p><span className="text-muted-foreground">Telegram-бот:</span> @Numerolog_helper_bot</p>
+              <p><span className="text-muted-foreground">ФИО:</span> Журавлева Наталья Владимировна</p>
+              <p><span className="text-muted-foreground">Статус:</span> Самозанятый</p>
+              <p><span className="text-muted-foreground">ИНН:</span> 651301545061</p>
+              <p><span className="text-muted-foreground">Telegram:</span> <a href="https://t.me/Natali2317" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">@Natali2317</a></p>
+              <p><span className="text-muted-foreground">Telegram-бот:</span> <a href="https://t.me/Numerolog_helper_bot" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">@Numerolog_helper_bot</a></p>
               <p><span className="text-muted-foreground">Сайт:</span> https://telegram-instagram-bot--preview.poehali.dev</p>
             </div>
           </section>
